@@ -1,52 +1,8 @@
-import './categories.styles.scss';
-
+import CategoryMenu from './components/category-menu/category-menu.component';
 const App = () => {
 
-  const categories = [
-    {
-      id: 1,
-      title: 'Hats',
-      imgSrc: '',
-    },
-    {
-      id: 2,
-      title: 'Jackets',
-      imgSrc: '',
-    },
-    {
-      id: 3,
-      title: 'Sneakers',
-      imgSrc: '',
-    },
-    {
-      id: 4,
-      title: 'Womens',
-      imgSrc: '',
-    },
-    {
-      id: 5,
-      title: 'Mens',
-      imgSrc: '',
-    },
-  ];
-
   return (
-    <div
-      className="categories-container">
-      {categories.map(category => (
-        <div
-          key={category.id}
-          className="category-container">
-          <div
-            className="background-image" />
-          <div
-            className="category-body-container">
-            <h2>{category.title}</h2>
-            Shop Now
-          </div>
-        </div>
-      ))}
-    </div>
+    <CategoryMenu />
   );
 }
 
