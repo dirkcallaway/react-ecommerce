@@ -1,8 +1,12 @@
 import { useState } from 'react';
+
+import FormInput from '../form-input/form-input.component';
+
 import {
   createUserDocumentFromAuth,
   createAuthUserWithEmailAndPassword,
 } from '../../utils/firebase/firebase.utils';
+import { Form } from 'react-router-dom'; // eslint-disable-line
 
 const defaultFormFields = {
   displayName: '',
@@ -52,41 +56,33 @@ const SignUpForm = () => {
     <div>
       <h1>Sign up with your email and password</h1>
       <form
-        onSubmit={ handleFormSubmit }>
-        <label>
-          Display Name
-        </label>
-        <input
+        onSubmit={handleFormSubmit}>
+        <FormInput
           onChange={handleFormChange}
           name="displayName"
           value={displayName}
+          label="Display Name"
           required
           type="text"/>
-        <label>
-          Email
-        </label>
-        <input
+        <FormInput
           onChange={handleFormChange}
           name="email"
           value={email}
+          label="Email"
           required
           type="email"/>
-        <label>
-          Password
-        </label>
-        <input
+        <FormInput
           onChange={handleFormChange}
           name="password"
           value={password}
+          label="Password"
           required
           type="password"/>
-        <label>
-          Confirm Password
-        </label>
-        <input
+        <FormInput
           onChange={handleFormChange}
           name="confirmPassword"
           value={confirmPassword}
+          label="Confirm Password"
           required
           type="password" />
         <button type="submit">

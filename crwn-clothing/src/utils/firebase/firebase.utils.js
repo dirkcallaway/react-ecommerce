@@ -23,7 +23,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const firebaseApp = initializeApp(firebaseConfig);
+const firebaseApp = initializeApp(firebaseConfig); // eslint-disable-line
 
 const googleProvider = new GoogleAuthProvider();
 googleProvider.setCustomParameters({
