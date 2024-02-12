@@ -1,12 +1,14 @@
 import { useState } from 'react';
 
+import Button from '../button/button.component';
 import FormInput from '../form-input/form-input.component';
 
 import {
   createUserDocumentFromAuth,
   createAuthUserWithEmailAndPassword,
 } from '../../utils/firebase/firebase.utils';
-import { Form } from 'react-router-dom'; // eslint-disable-line
+
+import './sign-up-form.styles.scss';
 
 const defaultFormFields = {
   displayName: '',
@@ -53,8 +55,10 @@ const SignUpForm = () => {
   };
 
   return (
-    <div>
-      <h1>Sign up with your email and password</h1>
+    <div
+      className="sign-up-container">
+      <h2>Don't have an account?</h2>
+      <span>Sign up with your email and password</span>
       <form
         onSubmit={handleFormSubmit}>
         <FormInput
@@ -85,9 +89,9 @@ const SignUpForm = () => {
           label="Confirm Password"
           required
           type="password" />
-        <button type="submit">
+        <Button type="submit">
           Sign Up
-        </button>
+        </Button>
       </form>
     </div>
   );
