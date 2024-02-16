@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, } from 'react';
 
 import Button from '../button/button.component';
 import FormInput from '../form-input/form-input.component';
@@ -44,7 +44,6 @@ const SignUpForm = () => {
       await createUserDocumentFromAuth(user, { displayName });
       resetFormFields();
     } catch (e) {
-      console.log(e);
       if (e.code === 'auth/email-already-in-use') alert('Email already in use.');
       else console.log('Error adding user.', e.message);
     }
